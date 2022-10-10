@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+
+
+<style>
+    body {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .rating {
+        position: relative;
+        width: 230px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .rating::after {
+        content: '';
+        position: absolute;
+        top: 35%;
+        left: 5%;
+        z-index: 1;
+        width: 90%;
+        height: 1px;
+        background-color: #f3f4f4;
+        border-radius: 16px;
+    }
+
+    .rating input[type="radio"] {
+        display: none;
+    }
+
+    .rating input[type="radio"] + label {
+        display: inline-flex;
+        width: 40px;
+        height: 60px;
+        border-radius: 50%;
+        vertical-align: middle;
+        transition: all ease 0.25s;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        z-index: 4;
+        font-size: .7em;
+    }
+
+    .rating label span {
+        padding-top: .4rem;
+        /*white-space: nowrap;*/
+    }
+
+    .rating label p {
+        margin: 0;
+        padding: 0;
+    }
+
+    svg {
+        transition: width 200ms ease, height 200ms ease;
+    }
+
+    path, circle {
+        transition: fill 500ms ease;
+    }
+
+    .color-brown {
+        fill: #FAFAFA;
+    }
+
+    .color-yellow {
+        fill: #c8ced3;
+    }
+
+    .color-blue {
+        fill: #FAFAFA;
+    }
+
+    .color-fa {
+        fill: #FAFAFA;
+    }
+
+    .rating input[type="radio"] + label:hover {
+        cursor: pointer;
+    }
+
+    .rating input[type="radio"] + label:hover svg {
+        width: 80%;
+    }
+
+    .rating input[type="radio"]:checked + label {
+        /*margin-top: 8px;*/
+    }
+
+    .rating input[type="radio"]:checked + label .color-brown {
+        fill: #6D4C41;
+    }
+
+    .rating input[type="radio"]:checked + label .color-yellow {
+        fill: #FFCA28;
+    }
+
+    .rating input[type="radio"]:checked + label .color-blue {
+        fill: #03A9F4;
+    }
+
+    .rating input[type="radio"]:checked + label .color-fa {
+        fill: #FAFAFA;
+    }
+
+    .rating input[type="radio"]:checked + label svg {
+        width: 100%;
+    }
+</style>
+
+
+
+<body>
+
+<div class="rating">
+    <input type="radio" name="rating" id="veryBad">
+    <label for="veryBad">
+        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="60%">
+            <circle class="color-yellow" cx="256" cy="256" r="256"/>
+            <g>
+                <path class="color-brown" d="M352,288c-35.296,0-64-28.704-64-64c0-8.832,7.168-16,16-16s16,7.168,16,16
+		            c0,17.632,14.336,32,32,32s32-14.368,32-32c0-8.832,7.168-16,16-16s16,7.168,16,16C416,259.296,387.296,288,352,288z"/>
+                <path class="color-brown" d="M160,288c-35.296,0-64-28.704-64-64c0-8.832,7.168-16,16-16s16,7.168,16,16
+		            c0,17.632,14.368,32,32,32s32-14.368,32-32c0-8.832,7.168-16,16-16s16,7.168,16,16C224,259.296,195.296,288,160,288z"/>
+                <path class="color-brown" d="M357.824,426.176c-4.096,0-8.192-1.568-11.328-4.672c-48.384-48.384-132.672-48.384-181.024,0
+                    c-6.24,6.24-16.384,6.24-22.624,0s-6.24-16.384,0-22.624C173.088,368.672,213.248,352,256,352s82.912,16.672,113.12,46.88
+                    c6.24,6.24,6.24,16.384,0,22.624C365.984,424.64,361.92,426.176,357.824,426.176z"/>
+            </g>
+            <path class="color-blue" d="M125.952,8.16c-5.664-10.08-22.24-10.08-27.904,0C89.696,23.04,48,98.784,48,128
+	            c0,35.296,28.704,64,64,64s64-28.704,64-64C176,98.784,134.304,23.04,125.952,8.16z"/>
+        </svg>
+        <span class="emoji-title">
+            <p>Trible</p>
+        </span>
+    </label>
+
+    <input type="radio" name="rating" id="bad">
+    <label for="bad">
+        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="60%">
+            <circle class="color-yellow" cx="256" cy="256" r="256"/>
+            <g>
+                <path class="color-brown" d="M357.824,394.176c-4.096,0-8.192-1.568-11.328-4.672c-48.384-48.384-132.672-48.384-181.024,0
+                    c-6.24,6.24-16.384,6.24-22.624,0s-6.24-16.384,0-22.624C173.088,336.672,213.248,320,256,320s82.912,16.672,113.12,46.88
+                    c6.24,6.24,6.24,16.384,0,22.624C366.016,392.64,361.92,394.176,357.824,394.176z"/>
+                <circle class="color-brown" cx="160" cy="192" r="32"/>
+                <circle class="color-brown" cx="352" cy="192" r="32"/>
+            </g>
+        </svg>
+        <span class="emoji-title">
+            <p>Bad</p>
+        </span>
+    </label>
+
+    <input type="radio" name="rating" id="fair">
+    <label for="fair">
+        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="60%">
+            <circle class="color-yellow" cx="256" cy="256" r="256"/>
+            <g>
+                <path class="color-brown" d="M176,416c-6.336,0-12.352-3.808-14.848-10.048c-3.296-8.192,0.704-17.504,8.928-20.768l160-64
+		            c8.192-3.296,17.504,0.704,20.768,8.896s-0.672,17.504-8.896,20.768l-160,64C180,415.616,177.984,416,176,416z"/>
+                <circle class="color-brown" cx="160" cy="192" r="32"/>
+                <circle class="color-brown" cx="352" cy="192" r="32"/>
+            </g>
+        </svg>
+        <span class="emoji-title">
+            <p>Okey</p>
+        </span>
+    </label>
+
+    <input type="radio" name="rating" id="good">
+    <label for="good">
+        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="60%">
+            <circle class="color-yellow" cx="256" cy="256" r="256"/>
+            <g>
+                <circle class="color-brown" cx="160" cy="192" r="32"/>
+                <circle class="color-brown" cx="352" cy="192" r="32"/>
+                <path class="color-brown" d="M256,416c-42.752,0-82.912-16.672-113.152-46.88c-6.24-6.24-6.24-16.384,0-22.624
+                    s16.384-6.24,22.624,0c48.352,48.384,132.64,48.384,181.024,0c6.24-6.24,16.384-6.24,22.624,0s6.24,16.384,0,22.624
+                    C338.912,399.328,298.752,416,256,416z"/>
+            </g>
+        </svg>
+        <span class="emoji-title">
+            <p>Good</p>
+        </span>
+    </label>
+
+    <input type="radio" name="rating" id="veryGood">
+    <label for="veryGood">
+        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="60%">
+            <circle class="color-yellow" cx="256" cy="256" r="256"/>
+            <g>
+                <path class="color-brown" d="M399.68,208.32c-8.832,0-16-7.168-16-16c0-17.632-14.336-32-32-32s-32,14.368-32,32
+		            c0,8.832-7.168,16-16,16s-16-7.168-16-16c0-35.296,28.704-64,64-64s64,28.704,64,64C415.68,201.184,408.512,208.32,399.68,208.32z"/>
+                <path class="color-brown" d="M207.68,208.32c-8.832,0-16-7.168-16-16c0-17.632-14.368-32-32-32s-32,14.368-32,32
+		            c0,8.832-7.168,16-16,16s-16-7.168-16-16c0-35.296,28.704-64,64-64s64,28.704,64,64C223.68,201.184,216.512,208.32,207.68,208.32z"/>
+            </g>
+            <path class="color-fa" d="M437.696,294.688c-3.04-4-7.744-6.368-12.736-6.368H86.4c-5.024,0-9.728,2.336-12.736,6.336
+                c-3.072,4.032-4.032,9.184-2.688,14.016C94.112,390.88,170.08,448.32,255.648,448.32s161.536-57.44,184.672-139.648
+                C441.696,303.84,440.736,298.688,437.696,294.688z"/>
+        </svg>
+        <span class="emoji-title">
+            <p>Great</p>
+        </span>
+    </label>
+</div>
+
+</body>
+</html>
